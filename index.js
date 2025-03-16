@@ -10,12 +10,20 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + "/views/index.html");
 });
 
-app.get("/api/hello", function (req, res) {
-  res.json({ greeting: "hello API" });
-});
+app.get("/api/:date?", function (req, res) {
+  const dateParam = req.params.date;
+  let date;
+  if (dateParam) {
+    date = new Date(dateParam);
+  } else {
+    date = new Date();
+  }
 
-app.get("/api/test", function (req, res) {
-  res.json({ testing: "testing" });
+  if (isNaN(date.getTime())) {
+    return res.status(400).json({ error: "Invalid Date" });
+  }
+
+  res.json({ unix: date.getTime(), utc: date.toUTCString() });
 });
 
 var listener = app.listen(process.env.PORT || 3000, function () {

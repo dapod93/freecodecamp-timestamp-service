@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm i",
-    "deploy": "wrangler publish",
-    "start": "wrangler dev"
+    "start": "node index.js"
   },
   "dependencies": {
     "cors": "^2.8.0",
