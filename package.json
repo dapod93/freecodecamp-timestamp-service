@@ -15,7 +15,6 @@
     "type": "git",
     "url": "https://github.com/dapod93/freecodecamp-timestamp-service.git"
   },
-  "homepage": "https://github.com/freeCodeCamp/boilerplate-project-timestamp#readme",
   "author": "dapod93 <davidliois50@gmail.com>",
   "keywords": [
     "node",
