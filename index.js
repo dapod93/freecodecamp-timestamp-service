@@ -12,6 +12,7 @@ app.get("/", function (req, res) {
 
 app.get("/api/:date?", function (req, res) {
   const dateParam = req.params.date;
+
   let date;
   if (dateParam) {
     date = new Date(dateParam);
